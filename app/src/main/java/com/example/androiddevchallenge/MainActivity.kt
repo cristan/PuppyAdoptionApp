@@ -64,9 +64,9 @@ fun WelcomeScreen() {
                 contentDescription = "A happy doggo",
                 modifier = Modifier
                     .fillMaxWidth()
-                    //.height(450.dp)
+                    // .height(450.dp)
                     .clip(shape = RoundedCornerShape(48.dp)),
-                //contentScale = ContentScale.Crop
+                // contentScale = ContentScale.Crop
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(text = "Adopt stray pets", style = typography.h4)
@@ -76,7 +76,8 @@ fun WelcomeScreen() {
             )
             Spacer(modifier = Modifier.height(8.dp))
             Button(
-                onClick = { /*TODO*/ }) {
+                onClick = { /*TODO*/ }
+            ) {
                 Text(text = "Continue")
             }
         }
