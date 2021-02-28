@@ -48,8 +48,10 @@ fun PetList(pets: List<Pet>, navController: NavController) {
             contentPadding = PaddingValues(16.dp),
         ) {
             items(pets.size) { petIndex ->
-                Pet(pets[petIndex]) {
-                    navController.navigate("welcome")
+                val petToShow = pets[petIndex]
+                Pet(petToShow) {
+                    navController.currentBackStackEntry?.arguments?.putParcelable("pet", petToShow)
+                    navController.navigate("pet")
                 }
             }
         }

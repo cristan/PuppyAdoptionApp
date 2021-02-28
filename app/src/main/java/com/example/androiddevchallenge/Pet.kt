@@ -15,7 +15,9 @@
  */
 package com.example.androiddevchallenge
 
+import android.os.Parcelable
 import androidx.annotation.DrawableRes
+import kotlinx.parcelize.Parcelize
 
 val allPets = listOf(
     Pet("Mary Puppins", R.drawable.doggo01),
@@ -32,7 +34,8 @@ val allPets = listOf(
     Pet("Sherlock Bones", R.drawable.doggo11),
 )
 
+@Parcelize
 data class Pet(
     val name: String,
     @DrawableRes val imageRes: Int
-)
+) : Parcelable

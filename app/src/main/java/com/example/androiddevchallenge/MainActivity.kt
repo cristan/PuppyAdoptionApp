@@ -44,5 +44,12 @@ fun MainNavigation() {
     NavHost(navController, startDestination = "welcome") {
         composable("welcome") { WelcomeScreen(navController) }
         composable("petlist") { PetList(allPets, navController) }
+        composable(
+            "pet",
+            // arguments = listOf(navArgument("pet") { type = NavType.ParcelableType(Pet::class.java) })
+        ) {
+            val pet = navController.previousBackStackEntry!!.arguments!!.getParcelable<Pet>("pet")!!
+            PetDetails(pet)
+        }
     }
 }
