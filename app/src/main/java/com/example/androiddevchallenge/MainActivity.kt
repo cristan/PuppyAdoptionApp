@@ -43,6 +43,6 @@ fun MainNavigation() {
     val navController = rememberNavController()
     NavHost(navController, startDestination = "welcome") {
         composable("welcome") { WelcomeScreen(navController) }
-        composable("petlist") { PetList(allPets) }
+        composable("petlist") { PetList(allPets, navController) }
     }
 }
