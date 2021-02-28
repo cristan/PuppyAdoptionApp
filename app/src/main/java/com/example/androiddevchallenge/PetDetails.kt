@@ -17,8 +17,11 @@ package com.example.androiddevchallenge
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -30,6 +33,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.example.androiddevchallenge.ui.theme.typography
 
 @Composable
 fun PetDetails(pet: Pet) {
@@ -43,7 +47,15 @@ fun PetDetails(pet: Pet) {
                 contentDescription = null,
                 modifier = Modifier.clip(shape = RoundedCornerShape(percent = 50)),
             )
-            Text("Who's a good doggo? ${pet.name} is a good doggo!")
+            Text(pet.name, style = typography.h4, modifier = Modifier.padding(vertical = 16.dp))
+            Text(
+                "Who's a good doggo? ${pet.name} is a good doggo!",
+                Modifier.padding(horizontal = 32.dp)
+            )
+            Spacer(modifier = Modifier.height(32.dp))
+            Button(onClick = {}) {
+                Text("Adopt me!")
+            }
         }
     }
 }
